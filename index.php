@@ -3,7 +3,7 @@ require 'vendor/autoload.php';
 use PhpOffice\PhpSpreadsheet\IOFactory;
 
 $spreadsheet = IOFactory::load( '404-error.xlsx' );
-$url = $spreadsheet->getActiveSheet()->rangeToArray( 'A2:A819' );
+$url = $spreadsheet->getActiveSheet('Sheet1')->rangeToArray( 'H7:H21' );
 
 foreach ( $url as $value ) {
     $old_url = str_replace( 'https://avalonhosting.services/', '/', $value[0] );
